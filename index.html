@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book-store</title>
+
+    <!-- bootstrap style sheetes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- custom style sheets -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    
+
+<body class="d-flex flex-column bg-light">
+    <!-- header section start -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Book-Store</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cart</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <!-- main section start -->
+  <main class="flex-shrink-0">
+    <h2 class="text-center text-capitalize mt-5">Search your book</h2>
+
+      <!-- search area section -->
+    <section class="container mx-auto">
+        <!-- search book field -->
+      <div class="input-group mb-3 w-50 mx-auto">
+        <input type="text" id="search-field" class="form-control" placeholder="search here"
+          aria-describedby="button-addon2">
+        <button onclick="searchResult()" class="btn btn-outline-dark" type="button" id="button-addon2">Search</button>
+      </div>
+
+      <!-- show error message -->
+      <div class="text-center">
+        <p id="error-msg" class="text-danger"></p>
+      </div>
+    </section>
+
+      <!-- load spinner -->
+    <div class="text-center container">
+      <div class="spinner-grow" role="status" id="spinner">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+      <!-- display search result section -->
+    <section id="display-book-info" class="container mx-auto">
+      <!-- show the number of result found -->
+      <div class="text-center my-5">
+        <h4 id="found-number"></h4>
+      </div>
+      <!-- search result field -->
+      <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
+      </div>
+    </section>
+  </main>
+    <!-- footer section initially hide-->
+  <footer class="footer mt-auto d-none" id="footer-section">
+    <p class="text-center mt-5 mb-0">&copy;copyrights reserved by Book-Store-2021</p>
+  </footer>
+
+    <!-- bootstrap js bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+
+    <!-- custom js script -->
+  <script src="js/script.js"></script>
 </body>
+
 </html>
