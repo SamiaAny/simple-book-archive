@@ -57,10 +57,10 @@ const displayResult = (booksInfo) => {
                     <img src="https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i : ''}-M.jpg" class="card-img-top img-fluid" alt="...">
                 </div>           
                 <div class="card-body">
-                    <h3 class="card-title">${book.title} ${book.subtitle ? book.subtitle : ''}</h3>
-                    <p><strong>Author: </strong> ${book.author_name ? book.author_name[0] : 'unknown'}</p>
-                    <p><strong>Publisher: </strong>${book.publisher ? book.publisher[0] : 'unknown'}</p>
-                    <p class="card-text">First published in ${book.first_publish_year ? book.first_publish_year : 'unknown'}</p>
+                    <h3 class="card-title">${book.title} ${getInfo(book.subtitle)}</h3>
+                    <p><strong>Author: </strong> ${getInfo(book.author_name)}</p>
+                    <p><strong>Publisher: </strong>${getInfo(book.publisher)}</p>
+                    <p class="card-text">First published in ${getInfo(book.first_publish_year)}</p>
                 </div>
             </div>
         `;
@@ -70,4 +70,16 @@ const displayResult = (booksInfo) => {
     toggleSearchResult('block');
     //footer option
     document.querySelector('#footer-section').classList.remove('d-none');
+}
+
+//return book info(name,author,publish related) dispaly inside card
+const getInfo = info => {
+    if(Array.isArray(info)) {
+        const result = info ? info[0] : 'unknown';
+        return result;
+    }
+    else {
+        const result = info ? info : 'unknown';
+        return result;
+    }
 }
