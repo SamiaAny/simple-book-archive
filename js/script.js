@@ -46,8 +46,9 @@ const displayResult = (booksInfo) => {
         showErrorMsg("");
         showNumberOfResult.innerText = `${booksInfo.length} result found`;
     }
-    
-    booksInfo.forEach(book => {
+    //use slice for displayign limited portion
+    const books = booksInfo.slice(0,30);
+    books.forEach(book => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
